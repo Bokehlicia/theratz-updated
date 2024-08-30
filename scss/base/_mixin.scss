@@ -1,0 +1,8 @@
+// Mixin-font
+@mixin heading-style($size) {
+  font-family: $font-family-heading;
+  font-size: $size;
+  line-height: $line-height-heading;
+  color: $color-heading;
+  margin: 0 0 0.5em;
+}

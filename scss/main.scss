@@ -1,0 +1,347 @@
+@import "./base/mixin.scss";
+@import "./base/placeholder.scss";
+@import "./base/reset.scss";
+@import "./base/variable.scss";
+
+.shippori-antique-b1-regular {
+  font-family: "Shippori Antique B1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+// Base Styles
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-base;
+  background-color: $background-base;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+
+  a {
+    color: $color-base;
+  }
+}
+
+// Headings
+h1 {
+  @include heading-style($font-size-h1);
+}
+
+h2 {
+  @include heading-style($font-size-h2);
+  color: $color-base;
+  @extend %decotext;
+}
+
+h3 {
+  @include heading-style($font-size-h3);
+}
+
+h4 {
+  @include heading-style($font-size-h4);
+}
+
+h5 {
+  @include heading-style($font-size-h5);
+}
+
+h6 {
+  @include heading-style($font-size-h6);
+}
+
+// Paragraphs
+p {
+  margin: 0 0 1em;
+  font-size: $font-size-base;
+}
+// Placeholders
+%nodecotext {
+  text-decoration: none;
+}
+
+// Grid parent container
+.grid-container {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: repeat(2, 100vh);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "main main main main main main main main main main main main"
+    "team team team team team team team team team team team team";
+}
+
+header {
+  position: absolute;
+  grid-area: header;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  height: 6rem;
+}
+
+main {
+  grid-area: main;
+}
+
+// Navbar section
+nav {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo logo logo logo menu menu menu menu avatar avatar avatar avatar";
+}
+
+.nav-logo {
+  grid-area: logo;
+  margin-left: 4rem;
+
+  a {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    @extend %nodecotext;
+
+    &:hover {
+      color: $highlight-color;
+    }
+  }
+}
+
+.nav-menu {
+  grid-area: menu;
+  display: flex;
+  align-items: end;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.nav-menu a {
+  @extend %nodecotext;
+
+  &:hover {
+    @extend %decotext;
+    color: $highlight-color;
+  }
+}
+
+.active-link {
+  @extend %decotext;
+}
+
+.nav-avatar {
+  grid-area: avatar;
+  margin-right: 4rem;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.nav-avatar a {
+  @extend %nodecotext;
+  &:hover {
+    color: $highlight-color;
+  }
+}
+
+.name-member {
+  a {
+    font-weight: bold;
+  }
+}
+
+.img-member {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+  background-image: url(../img/avatar.gif);
+  @extend %bgimgcenter;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+  height: 100%;
+  @extend %bgimgcenter;
+  background-image: url(../img/main-background.webp);
+  display: flex;
+  align-items: center;
+}
+
+.main-text {
+  width: 40%;
+  background-color: rgba($color-heading, 0.5);
+  margin-left: 3rem;
+  padding: 1rem;
+}
+
+.main-text {
+  border-radius: 10px;
+}
+
+.team {
+  grid-area: team;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr 0.4fr;
+  grid-template-columns: subgrid;
+  grid-template-areas:
+    "title title title title title title title title title title title title"
+    "team team team team team team team team team team team team"
+    "stats stats stats stats stats stats stats stats stats stats stats stats";
+
+  h2 {
+    margin-top: 2rem;
+    margin-left: 4rem;
+  }
+}
+
+.subttle {
+  grid-area: title;
+}
+
+.team-members {
+  grid-area: team;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "ponk kinero bokehlicia allan jean";
+}
+
+.team-mate {
+  position: relative;
+  background-color: rgba($color-heading, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  li {
+    list-style-type: disc;
+  }
+
+  h3 {
+    color: $color-base;
+    font-family: "Shippori Antique B1", sans-serif;
+    font-size: 4rem;
+    text-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+  }
+}
+
+#ponk {
+  grid-area: ponk;
+}
+
+#kinero {
+  grid-area: kinero;
+}
+
+#bokehlicia {
+  grid-area: bokehlicia;
+}
+
+#allan {
+  grid-area: allan;
+}
+
+#jeanluc {
+  grid-area: jean;
+}
+
+.team-ttlstats {
+  grid-area: stats;
+}
+
+.card {
+  width: 85%;
+  height: 80%;
+  margin-top: 4rem;
+  border-radius: 5px;
+  // display: flex;
+  // align-items: end;
+  // justify-content: center;
+}
+
+.card-title {
+  margin-top: 1rem;
+  position: absolute;
+}
+
+.card-stats {
+  width: 85%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-stats ul {
+  margin-left: 2rem;
+}
+
+.c-ponk {
+  // background-image: url(../img/ponk.webp);
+  @extend %bgimgcenter;
+}
+
+.c-title {
+  width: 100%;
+  height: 15%;
+  background-color: rgba($color-heading, 0.2);
+}
+
+.c-text {
+  width: 100%;
+  height: 40%;
+  background-color: rgba($color-heading, 0.5);
+}
+
+.c-kinero {
+  background-image: url(../img/kinero.webp);
+  @extend %bgimgcenter;
+  background-position: top;
+}
+
+.c-bokehlicia {
+  background-image: url(../img/bokehlicia.webp);
+  @extend %bgimgcenter;
+}
+
+.c-allan {
+  background-image: url(../img/allan.webp);
+  @extend %bgimgcenter;
+}
+
+.c-jeanluc {
+  background-image: url(../img/jeanluc.webp);
+  @extend %bgimgcenter;
+}
+
+.c-ponk {
+  background-image: url(../img/ponk.webp);
+  @extend %bgimgcenter;
+}
