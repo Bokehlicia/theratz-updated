@@ -6,7 +6,7 @@
 
 .active-link, .nav-menu a:hover, h2 {
   text-decoration: underline;
-  text-underline-offset: 0.7rem;
+  text-underline-offset: 0.9rem;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -352,7 +352,6 @@ main {
 
 .kinero {
   grid-area: kinero;
-  background-color: peachpuff;
 }
 
 .kinero-bg {
@@ -363,7 +362,6 @@ main {
 
 .bokeh {
   grid-area: bokeh;
-  background-color: peachpuff;
 }
 
 .bokeh-bg {
@@ -373,7 +371,6 @@ main {
 
 .allan {
   grid-area: allan;
-  background-color: peachpuff;
 }
 
 .allan-bg {
@@ -383,7 +380,6 @@ main {
 
 .jean {
   grid-area: jean;
-  background-color: peachpuff;
 }
 
 .jean-bg {
